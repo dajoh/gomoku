@@ -1,0 +1,17 @@
+application: media-site
+version: 2
+runtime: go
+api_version: go1
+
+inbound_services:
+- channel_presence
+
+handlers:
+- url: /js
+  static_dir: js
+- url: /css
+  static_dir: css
+- url: /fonts
+  static_dir: fonts
+- url: /.*
+  script: _go_app
